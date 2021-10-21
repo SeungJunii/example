@@ -1,8 +1,6 @@
 import './App.css';
-import Counter from './Counter';
-import MyComponent from './MyComponent';
 import styled from '@emotion/styled';
-import Say from './Say';
+import EventPracticeFunction from './EventPracticeFunction';
 
 const Mainframe = styled.div`
   display: flex;
@@ -25,15 +23,7 @@ const App = () => {
   return (
     <Mainframe>
       <Subframe>
-        <Say />
-      </Subframe>
-      <Subframe>
-        <Counter />
-      </Subframe>
-      <Subframe>
-        <MyComponent name={'this'} favoriteNumber={7}>
-          opps!
-        </MyComponent>
+        <EventPracticeFunction />
       </Subframe>
     </Mainframe>
   );
