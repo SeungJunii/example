@@ -1,32 +1,20 @@
 import './App.css';
 import styled from '@emotion/styled';
-import EventPracticeFunction from './EventPracticeFunction';
+import ValidationSample from './ValidationSample';
+import ScrollBox from './ScrollBox';
+import React, { Component } from 'react';
 
-const Mainframe = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-  align-items: center;
-`;
-const Subframe = styled.div`
-  display: flex;
-  width: 100%;
-  margin: 30px;
-  justify-content: center;
-  > h1,
-  h2 {
-    text-align: center;
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+        <button onClick={() => this.scrollBox.scrollToBottom()}>
+          ScrollToBottom
+        </button>
+      </div>
+    );
   }
-`;
-
-const App = () => {
-  return (
-    <Mainframe>
-      <Subframe>
-        <EventPracticeFunction />
-      </Subframe>
-    </Mainframe>
-  );
-};
+}
 
 export default App;
