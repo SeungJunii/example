@@ -25,6 +25,12 @@ const IterationSample = () => {
     setNames(nextNames);
   };
 
+  const onKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onClick();
+    }
+  };
+
   const nameList = names.map((name) => (
     <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
       {name.text}
@@ -32,7 +38,7 @@ const IterationSample = () => {
   ));
   return (
     <>
-      <input value={inputText} onChange={onChange} />
+      <input value={inputText} onChange={onChange} onKeyPress={onKeyPress} />
       <button onClick={onClick}>ADD</button>
       <ul>{nameList}</ul>
     </>
